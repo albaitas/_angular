@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="cc.js"></script>
+</head>
+<div ng-app="app">
+<div class="container" ng-controller ="AppCtrl">
+    <h1>{{title}}</h1>
+    <div class="btn btn-info" ng-click="clickBtn()">Spausti</div>
+    <div class="btn btn-info" ng-mouseover="hoverBtn()">Uzvesti</div>
+    <hr>
+    <pre>{{nameData | json}}</pre>
+    <hr>
+    <input type="text" ng-model="qwery" class="form-control">
+     <div class="row" ng-repeat="name in nameData | filter:qwery">
+        <div class="col-xs-3">
+            firstName: {{name.firstName}}
+        </div>
+        <div class="col-xs-6">
+            lastName: {{name.lastName}}
+        </div>
+    </div>
+    <!--<hr>
+    <div><input type="text" ng-model="name"></div>
+    <div>Hello {{name}}</div>
+    <input type="checkbox" ng-model="ShowCheck">
+    <div ng-show="ShowCheck">Tekstas kurį pamatysime</div> -->
+</div>
+
+</div>
